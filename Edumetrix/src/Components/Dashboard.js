@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import MaterialIcon from 'react-native-vector-icons/Ionicons'
 import Drawer from './Drawer'
 import Home from './Home'
+import SearchPage from './SearchPage'
+import EditProfilePage from './EditProfilePage'
 
 class Dashboard extends Component {
 
@@ -43,7 +45,7 @@ const bottomTabNavigator = createBottomTabNavigator({
         }
     },
     Search: {
-        screen: Home,
+        screen: SearchPage,
         navigationOptions: {
             tabBarLabel:' ',
             tabBarIcon: ({ tintColor }) => (
@@ -52,7 +54,7 @@ const bottomTabNavigator = createBottomTabNavigator({
         }
     },
     Profile: {
-        screen: Home,
+        screen: EditProfilePage,
         navigationOptions: {
             tabBarLabel:' ',
             tabBarIcon: ({ tintColor }) => (
