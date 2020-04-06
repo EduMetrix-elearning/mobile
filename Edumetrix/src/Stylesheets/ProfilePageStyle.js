@@ -30,11 +30,14 @@ const style = StyleSheet.create({
     subMenuContainer:{
         alignItems:"center",
         justifyContent:"center",
-        width:"20%"
+        width:"20%",
+      
     },
     submenuImg:{
-        height:50,
-        width:30
+        height:35,
+        width:35,
+  
+       
     },
     followingView:{
         display:"flex",

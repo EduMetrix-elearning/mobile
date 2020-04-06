@@ -1,11 +1,15 @@
-import {StyleSheet} from 'react-native'
-
+import {StyleSheet,Dimensions} from 'react-native'
+const ITEM_WIDTH= Dimensions.get("window").width
 const style = StyleSheet.create({
 
     homeSafeArea:{
         backgroundColor:"white",
         flex:1,
         margin:1
+    },
+    drawerImg:{
+        height:25,
+        width:25
     },
     createView:{
         backgroundColor:"lightgray",
@@ -91,7 +95,7 @@ const style = StyleSheet.create({
     },
     postImg:{
         height:300,
-        width:"100%",
+        width:ITEM_WIDTH,
     },
     likesCommentView:{
         display:"flex",

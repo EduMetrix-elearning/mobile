@@ -3,7 +3,7 @@ import { View, Text, ScrollView, FlatList,Dimensions } from 'react-native'
 import { SearchBar } from 'react-native-elements';
 import TabButton from './TabButton'
 import style from '../Stylesheets/SearchPageStyle'
-
+import Drawer from './Drawer'
 import SearchPics from './SearchPics'
 const tabNames = ["Animals", "Nature", "Food", "Auto", "TV & Movies", "Games", "Bikes"]
 const images = [
@@ -35,6 +35,10 @@ class SearchPage extends Component {
     updateSearch = search => {
         this.setState({ search });
     };
+    getData = (data) => {
+        console.log("get data", data);
+
+    }
 
     render() {
         const { search } = this.state;
@@ -44,9 +48,11 @@ class SearchPage extends Component {
 
             // <KeyboardAvoidingView behavior="position">
             <View>
+                  <Drawer getData={this.getData} props ={this.props}/>
                 <SearchBar
                     placeholder="Search here...."
                     onChangeText={this.updateSearch}
+                    cancelIcon
                     value={search}
                     inputStyle={
                         {
@@ -79,6 +85,7 @@ class SearchPage extends Component {
                   }}
                   />
                 </View>
+               
             </View>
 
         )

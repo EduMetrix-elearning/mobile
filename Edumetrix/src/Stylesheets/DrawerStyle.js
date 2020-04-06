@@ -29,10 +29,80 @@ const style = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         justifyContent:"space-around",
+        marginTop:5
     },
     drawerImg:{
         height:25,
         width:25
+    },
+    profileImage:{
+        // backgroundColor:"red",
+        padding:20,
+        alignItems:"center",
+        alignContent:"center",
+        marginTop:20,
+        borderBottomWidth:1,
+        borderBottomColor:"lightgray"
+    },
+    profileImg:{
+        height:100,
+        width:100,
+        borderRadius:100
+    },
+    userNameView:{
+        padding:10
+    },
+    userFollowingView:{
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"space-between",
+        padding:10,
+        // backgroundColor:"darkgreen",
+      
+        alignContent:"center",
+        alignItems:"center"
+    },
+    followersView:{
+        borderWidth:1,
+        padding:6,
+        borderRadius:20
+    },
+    EditProfileView:{
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignContent:"center",
+        alignItems:"center",
+
+        width:"70%",
+       
+    },
+    editProfile:{
+        borderWidth:1,
+        padding:6,
+        borderRadius:20
+    },
+    footerLinksView:{
+        // backgroundColor:"yellow",
+        width:"90%",
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"space-around",
+        marginBottom:5
+    },
+    dotView:{
+        backgroundColor:"gray",
+        borderRadius:100,
+        height:4,
+        width:4,
+        marginTop:10 
+    },
+    versionView:{
+        marginBottom:5
+    },
+    chatbotImg:{
+        height:24,
+        width:24
     }
 
 })
