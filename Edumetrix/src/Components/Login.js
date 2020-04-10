@@ -28,8 +28,7 @@ class Login extends Component {
 
     signInHandle = (event)=>{
 
-        // this.props.navigation.navigate('CustomChatBot')
-        this.props.navigation.navigate("Dashboard")
+        this.props.navigation.navigate("DrawerComponent")
        
     }
 

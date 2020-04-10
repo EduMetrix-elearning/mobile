@@ -4,7 +4,8 @@ import { Image, View, SafeAreaView, ScrollView, Text, Dimensions,TouchableOpacit
 import { createAppContainer } from 'react-navigation'
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import MaterialIcon from 'react-native-vector-icons/Ionicons'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Home from './Home'
 import SearchPage from './SearchPage'
 import EditProfilePage from './EditProfilePage'
@@ -12,6 +13,8 @@ import style from '../Stylesheets/DrawerStyle'
 import FindFriends from './FindFriends'
 import LiveChat from './LiveChat'
 import ChatScreen from './ChatScreen'
+import EarningPage from './EarningPage'
+
 
 const { width, height } = Dimensions.get('screen');
 
@@ -80,7 +83,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     SearchPage: {
         screen: SearchPage,
         navigationOptions: {
-            drawerIcon: (<MaterialIcon name="ios-search" size={24} color={"black"} />),
+            drawerIcon: (<Ionicons name="ios-search" size={24} color={"black"} />),
             drawerLabel: "Top Pics For You",
         }
     },
@@ -111,7 +114,16 @@ const AppDrawerNavigator = createDrawerNavigator({
             drawerIcon: (<Image source={require('../Assets/chat.png')} style ={style.chatbotImg}/>),
             drawerLabel: "Chat bot",
         }
-    }
+    },
+    EarningPage:{
+        screen:EarningPage,
+        navigationOptions:{
+            drawerIcon: (<MaterialIcons name="attach-money" size={24} color={"black"} />),
+            drawerLabel: "Earning",
+        }
+    },
+    
+   
     
 
 }, {

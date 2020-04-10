@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView } from 'react-native'
 import style from '../Stylesheets/ChatScreenStyle'
 import Drawer from './Drawer'
 import Footer from './Footer'
@@ -85,7 +85,7 @@ class ChatScreen extends Component {
                         <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom:120}}>
                             {
                                 userList.map((item, key) => (
-                                    <UsersList item ={item}/>
+                                    <UsersList props ={this.props} item ={item}/>
                                 ))
                             }
 

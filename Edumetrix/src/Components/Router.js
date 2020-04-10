@@ -9,6 +9,8 @@ import OtpPage from './OtpPage'
 import Dashboard from './Dashboard'
 import CustomChatBot from './CustomChatBot'
 import LiveChat from './LiveChat'
+import DrawerComponent from './DrawerComponent'
+import Chatbox from './Chatbox'
 
 const mainNavigator = createStackNavigator({
     
@@ -17,10 +19,11 @@ const mainNavigator = createStackNavigator({
     ForgotPassword:{screen:ForgotPassword,navigationOptions:{headerShown:false}},
     SignUp:{screen:SignUp,navigationOptions:{headerShown:false}},
     OtpPage:{screen:OtpPage,navigationOptions:{headerShown:false}},
-    Dashboard:{screen:Dashboard,navigationOptions: {headerShown:false}},
+    DrawerComponent:{screen:DrawerComponent,navigationOptions:{headerShown:false}},
+    // Dashboard:{screen:Dashboard,navigationOptions: {headerShown:false}},
     LiveChat:{screen:LiveChat,navigationOptions:{headerShown:false}},
-    CustomChatBot:{screen:CustomChatBot,navigationOptions:{headerShown:false}}
-    
+    CustomChatBot:{screen:CustomChatBot,navigationOptions:{headerShown:false}},
+    Chatbox:{screen:Chatbox,navigationOptions:{headerShown:false}}
 },
 {initialRouteName: 'SplashScreen'}
 );
