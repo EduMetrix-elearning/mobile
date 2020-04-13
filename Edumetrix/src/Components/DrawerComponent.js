@@ -4,7 +4,7 @@ import { Image, View, SafeAreaView, ScrollView, Text, Dimensions,TouchableOpacit
 import { createAppContainer } from 'react-navigation'
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Ionicons from 'react-native-vector-icons/Ionicons'
+
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Home from './Home'
 import SearchPage from './SearchPage'
@@ -14,7 +14,7 @@ import FindFriends from './FindFriends'
 import LiveChat from './LiveChat'
 import ChatScreen from './ChatScreen'
 import EarningPage from './EarningPage'
-
+import WalletPage from './WalletPage'
 
 const { width, height } = Dimensions.get('screen');
 
@@ -83,14 +83,14 @@ const AppDrawerNavigator = createDrawerNavigator({
     SearchPage: {
         screen: SearchPage,
         navigationOptions: {
-            drawerIcon: (<Ionicons name="ios-search" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="search" size={24} color={"black"} />),
             drawerLabel: "Top Pics For You",
         }
     },
     Profile: {
         screen: EditProfilePage,
         navigationOptions: {
-            drawerIcon: (<Icon name="user-o" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="user" size={24} color={"black"} />),
             drawerLabel: "Profile",
         }
     },
@@ -120,6 +120,13 @@ const AppDrawerNavigator = createDrawerNavigator({
         navigationOptions:{
             drawerIcon: (<MaterialIcons name="attach-money" size={24} color={"black"} />),
             drawerLabel: "Earning",
+        }
+    },
+    Wallet:{
+        screen:WalletPage,
+        navigationOptions:{
+            drawerIcon: (<MaterialIcons name="account-balance-wallet" size={24} color={"black"} />),
+            drawerLabel: "Wallet",
         }
     },
     

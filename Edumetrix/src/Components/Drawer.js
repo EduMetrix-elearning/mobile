@@ -21,9 +21,15 @@ class Drawer extends Component {
         
        this.props.getData(this.state.isAddPost)
     }
-    render() {
-        // console.log("drawer==================\n\n\n ",this.props.props.navigation);
+
+    notificationHandle = () =>{
+       
+        this.props.props.navigation.navigate("NotificationPage")
         
+    }
+
+    render() {
+       
         return (
             <SafeAreaView style={style.safeAreaView}>
              
@@ -36,8 +42,12 @@ class Drawer extends Component {
                     </View>
 
                     <View style = {style.headerMenuContainer}>
+                        <TouchableOpacity onPress={this.notificationHandle}>
                     <Image source = {require('../Assets/post-notification.png')} style={style.postNotification}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
                     <Image source = {require('../Assets/chat-notification.png')} style={style.postNotification}/>
+                    </TouchableOpacity>
                         <View>
                             <TouchableOpacity  onPress ={this.sendState}>
                             <View style = {{borderWidth:1,padding:4,borderColor:"gray",borderRadius:5,marginRight:5}}>

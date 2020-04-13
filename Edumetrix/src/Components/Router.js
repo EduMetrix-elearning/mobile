@@ -11,6 +11,7 @@ import CustomChatBot from './CustomChatBot'
 import LiveChat from './LiveChat'
 import DrawerComponent from './DrawerComponent'
 import Chatbox from './Chatbox'
+import NotificationPage from './NotificationPage'
 
 const mainNavigator = createStackNavigator({
     
@@ -23,7 +24,9 @@ const mainNavigator = createStackNavigator({
     // Dashboard:{screen:Dashboard,navigationOptions: {headerShown:false}},
     LiveChat:{screen:LiveChat,navigationOptions:{headerShown:false}},
     CustomChatBot:{screen:CustomChatBot,navigationOptions:{headerShown:false}},
-    Chatbox:{screen:Chatbox,navigationOptions:{headerShown:false}}
+    Chatbox:{screen:Chatbox,navigationOptions:{headerShown:false}},
+    NotificationPage:{screen:NotificationPage,navigationOptions:{headerShown:false}}
+    
 },
 {initialRouteName: 'SplashScreen'}
 );
