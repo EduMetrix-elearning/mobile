@@ -18,6 +18,15 @@ class WalletPage extends Component {
         }
     }
 
+    requestHandle = () => {
+        console.log("request handle..",this.props.navigation.navigate);  
+    }
+
+    sendHandle = () => {
+        // console.log("send handle..",this.props.navigation.navigate);
+        this.props.navigation.navigate("Send") 
+    }
+
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
@@ -53,7 +62,7 @@ class WalletPage extends Component {
                             </View>
                         </View>
                         <View style={style.buttonsView}>
-                            <TouchableOpacity style={style.requestTouch}>
+                            <TouchableOpacity onPress={this.requestHandle} style={style.requestTouch}>
                                 <View style={{ justifyContent: "center", marginRight: 20 }}>
                                     <Feather name="download" size={27} color={"white"} />
                                 </View>
@@ -62,7 +71,7 @@ class WalletPage extends Component {
                                 </View>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={style.sendTouch}>
+                            <TouchableOpacity onPress={this.sendHandle} style={style.sendTouch}>
                                 <View style={{ justifyContent: "center", marginRight: 20 }}>
                                     <Feather name="upload" size={27} color={"white"} />
                                 </View>

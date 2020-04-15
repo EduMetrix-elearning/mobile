@@ -12,6 +12,8 @@ import LiveChat from './LiveChat'
 import DrawerComponent from './DrawerComponent'
 import Chatbox from './Chatbox'
 import NotificationPage from './NotificationPage'
+import Send from './Send'
+import SendConfirmationPage from './SendConfirmationPage'
 
 const mainNavigator = createStackNavigator({
     
@@ -25,7 +27,9 @@ const mainNavigator = createStackNavigator({
     LiveChat:{screen:LiveChat,navigationOptions:{headerShown:false}},
     CustomChatBot:{screen:CustomChatBot,navigationOptions:{headerShown:false}},
     Chatbox:{screen:Chatbox,navigationOptions:{headerShown:false}},
-    NotificationPage:{screen:NotificationPage,navigationOptions:{headerShown:false}}
+    NotificationPage:{screen:NotificationPage,navigationOptions:{headerShown:false}},
+    Send:{screen:Send,navigationOptions:{headerShown:false}},
+    SendConfirmationPage:{screen:SendConfirmationPage,navigationOptions:{headerShown:false}}
     
 },
 {initialRouteName: 'SplashScreen'}
