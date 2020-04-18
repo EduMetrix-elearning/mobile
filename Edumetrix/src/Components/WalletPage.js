@@ -19,7 +19,8 @@ class WalletPage extends Component {
     }
 
     requestHandle = () => {
-        console.log("request handle..",this.props.navigation.navigate);  
+        console.log("request handle..",this.props.navigation.navigate); 
+        this.props.navigation.navigate("RequestPayment") 
     }
 
     sendHandle = () => {

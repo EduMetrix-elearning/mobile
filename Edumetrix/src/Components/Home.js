@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { View, Text, SafeAreaView, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native'
+import {
+    View, Text, SafeAreaView, ScrollView,
+    Image, TextInput,
+    TouchableOpacity, BackHandler,
+    
+    Alert
+} from 'react-native'
 import Drawer from './Drawer'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import MaterialIcon from 'react-native-vector-icons/Ionicons'
@@ -17,6 +23,31 @@ class Home extends Component {
         }
     }
 
+    componentDidMount = () => {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+        
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+    }
+
+    handleBackButton = () => {
+        Alert.alert(
+            'Edumetrix',
+            'Do you want to exit from edumetrix?', [{
+                text: 'No',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel'
+            }, {
+                text: 'Yes',
+                onPress: ()=> BackHandler.exitApp()
+            }, ], {
+                cancelable: false
+            }
+         )
+         return true;
+       } 
 
     getData = (data) => {
         console.log("get data", data);
@@ -39,9 +70,9 @@ class Home extends Component {
                         <View>
                             <View style={style.createView}>
                                 <TouchableOpacity>
-                                <View>
-                                    <Text>create view</Text>
-                                </View>
+                                    <View>
+                                        <Text>create view</Text>
+                                    </View>
                                 </TouchableOpacity>
                                 <Text>create view</Text>
                                 <Text>create view</Text>

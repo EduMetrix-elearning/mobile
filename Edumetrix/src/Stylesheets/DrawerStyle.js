@@ -65,7 +65,8 @@ const style = StyleSheet.create({
     followersView:{
         borderWidth:1,
         padding:6,
-        borderRadius:20
+        borderRadius:20,
+        borderColor:"white"
     },
     EditProfileView:{
         display:"flex",
@@ -80,7 +81,8 @@ const style = StyleSheet.create({
     editProfile:{
         borderWidth:1,
         padding:6,
-        borderRadius:20
+        borderRadius:20,
+        borderColor:"white"
     },
     footerLinksView:{
         // backgroundColor:"yellow",

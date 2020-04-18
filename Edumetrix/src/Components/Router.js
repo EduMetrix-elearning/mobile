@@ -6,7 +6,7 @@ import SplashScreen from './SplashScreen'
 import ForgotPassword from './ForgotPassword'
 import SignUp from './SignUp'
 import OtpPage from './OtpPage'
-import Dashboard from './Dashboard'
+import GetStarted from './GetStarted'
 import CustomChatBot from './CustomChatBot'
 import LiveChat from './LiveChat'
 import DrawerComponent from './DrawerComponent'
@@ -14,6 +14,7 @@ import Chatbox from './Chatbox'
 import NotificationPage from './NotificationPage'
 import Send from './Send'
 import SendConfirmationPage from './SendConfirmationPage'
+import RequestPayment from './RequestPayment'
 
 const mainNavigator = createStackNavigator({
     
@@ -23,13 +24,14 @@ const mainNavigator = createStackNavigator({
     SignUp:{screen:SignUp,navigationOptions:{headerShown:false}},
     OtpPage:{screen:OtpPage,navigationOptions:{headerShown:false}},
     DrawerComponent:{screen:DrawerComponent,navigationOptions:{headerShown:false}},
-    // Dashboard:{screen:Dashboard,navigationOptions: {headerShown:false}},
+    GetStarted:{screen:GetStarted,navigationOptions: {headerShown:false}},
     LiveChat:{screen:LiveChat,navigationOptions:{headerShown:false}},
     CustomChatBot:{screen:CustomChatBot,navigationOptions:{headerShown:false}},
     Chatbox:{screen:Chatbox,navigationOptions:{headerShown:false}},
     NotificationPage:{screen:NotificationPage,navigationOptions:{headerShown:false}},
     Send:{screen:Send,navigationOptions:{headerShown:false}},
-    SendConfirmationPage:{screen:SendConfirmationPage,navigationOptions:{headerShown:false}}
+    SendConfirmationPage:{screen:SendConfirmationPage,navigationOptions:{headerShown:false}},
+    RequestPayment:{screen:RequestPayment,navigationOptions:{headerShown:false}}
     
 },
 {initialRouteName: 'SplashScreen'}

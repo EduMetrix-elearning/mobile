@@ -4,17 +4,20 @@ import style from '../Stylesheets/SendPageStyle'
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Icon from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+
 class Send extends Component {
 
     constructor(props) {
         super(props)
 
         this.state = {
-            isQR: false
+            isQR: false,
+            data:""
         }
     }
 
     DoneHandle = () => {
+       
         this.props.navigation.navigate("SendConfirmationPage", { data: "" })
     }
 
@@ -28,15 +31,15 @@ class Send extends Component {
         })
     }
 
-    onSuccess = (e) => {
+    onSuccess = async(e) => {
         // const check = e.data.substring(0, 4);
         const check = e.data
         console.log('scanned data ' + check);
-        this.setState({
+       await  this.setState({
             isQR: false,
-
+            data:check
         })
-        this.props.navigation.navigate("SendConfirmationPage", { data: { value: check } })
+        this.props.navigation.navigate("SendConfirmationPage", { data: { value:this.state.data } })
 
 
     }

@@ -23,7 +23,7 @@ class SignUp extends Component {
     }
 
     getStartedHandle =(event)=>{
-       this.props.navigation.navigate("OtpPage")
+       this.props.navigation.navigate("OtpPage",{page:"signUp"})
     }
 
     render() {

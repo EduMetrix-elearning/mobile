@@ -22,29 +22,31 @@ const CustomDrawerComponent = (props) => (
     <SafeAreaView style={{ flex: 1 }}>
 
         <View style={style.profileImage}>
-            <View style={{ borderWidth: 1, borderColor: "red", borderRadius: 100, padding: 2 }}>
+            <View style={{ borderWidth: 1.5, borderColor: "white", borderRadius: 100, padding: 2 }}>
                 <Image source={require('../Assets/kapil.jpg')} style={style.profileImg} />
             </View>
             <View style={style.userNameView}>
-                <Text style={{ fontWeight: "bold", fontSize: 17 }}>Kapil asthana (Admin)</Text>
+                <Text style={{ fontWeight: "bold", fontSize: 17,color:"white" }}>Kapil asthana (Admin)</Text>
             </View>
 
             <View style={style.userFollowingView}>
-                <View style={style.followersView}><Text>484K Following</Text></View>
-                <View style={{ padding: 10 }}><Text style={{ fontSize: 20 }}>|</Text></View>
-                <View style={style.followersView}><Text>484K Followers</Text></View>
+                <View style={style.followersView}>
+                    <Text style={{ color:"white" }}>484K Following</Text>
+                    </View>
+                <View style={{ padding: 10 }}><Text style={{ fontSize: 20,color:"white" }}>|</Text></View>
+                <View style={style.followersView}><Text style={{ color:"white" }}>484K Followers</Text></View>
             </View>
 
             <View style={style.EditProfileView}>
-                <View style={style.editProfile}><Text>edit Profile</Text></View>
+                <View style={style.editProfile}><Text style={{ color:"white" }}>edit Profile</Text></View>
 
-                <View style={style.editProfile}><Text>My Home</Text></View>
+                <View style={style.editProfile}><Text style={{ color:"white" }}>My Home</Text></View>
             </View>
         </View>
 
         <ScrollView>
-            <View>
-                <DrawerItems {...props} />
+            <View >
+                <DrawerItems {...props}/>
             </View>
 
         </ScrollView>
@@ -76,35 +78,35 @@ const AppDrawerNavigator = createDrawerNavigator({
     Home: {
         screen: Home, navigationOptions:
         {
-            drawerIcon: (<Icon name="home" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="home" size={24} color={"white"} />),
             drawerLabel: "Home"
         }
     },
     SearchPage: {
         screen: SearchPage,
         navigationOptions: {
-            drawerIcon: (<Icon name="search" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="search" size={24} color={"white"} />),
             drawerLabel: "Top Pics For You",
         }
     },
     Profile: {
         screen: EditProfilePage,
         navigationOptions: {
-            drawerIcon: (<Icon name="user" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="user" size={24} color={"white"} />),
             drawerLabel: "Profile",
         }
     },
     FindFriends: {
         screen: FindFriends,
         navigationOptions: {
-            drawerIcon: (<Icon name="group" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="group" size={24} color={"white"} />),
             drawerLabel: "Find Friends",
         }
     },
     LiveChat: {
         screen: LiveChat,
         navigationOptions: {
-            drawerIcon: (<Icon name="comments-o" size={24} color={"black"} />),
+            drawerIcon: (<Icon name="comments-o" size={24} color={"white"} />),
             drawerLabel: "Live Chat",
         }
     },
@@ -118,28 +120,32 @@ const AppDrawerNavigator = createDrawerNavigator({
     EarningPage:{
         screen:EarningPage,
         navigationOptions:{
-            drawerIcon: (<MaterialIcons name="attach-money" size={24} color={"black"} />),
+            drawerIcon: (<MaterialIcons name="attach-money" size={24} color={"white"} />),
             drawerLabel: "Earning",
         }
     },
     Wallet:{
         screen:WalletPage,
         navigationOptions:{
-            drawerIcon: (<MaterialIcons name="account-balance-wallet" size={24} color={"black"} />),
+            drawerIcon: (<MaterialIcons name="account-balance-wallet" size={24} color={"white"} />),
             drawerLabel: "Wallet",
+            
         }
     },
     
-   
-    
-
 }, {
     drawerWidth: Math.min(height, width) * 0.9,
-    drawerBackgroundColor: "white",
+    drawerBackgroundColor: "#3B3E47",
+
     contentComponent: CustomDrawerComponent,
     contentOptions: {
-        activeTintColor: "orange"
-    }
+        activeTintColor: "green",
+        activeBackgroundColor: 'transparent',
+        labelStyle:{
+            color: 'white',
+            
+        }
+    },
 })
 
 const AppContainer = createAppContainer(AppDrawerNavigator)

@@ -10,7 +10,6 @@ const style = StyleSheet.create({
         right: 0,
         flex: 1,
         height: "100%",
-
         justifyContent: "center",
         alignItems: "center"
     },
@@ -134,15 +133,26 @@ const style = StyleSheet.create({
     forgotpswrd: {
         color: "gray"
     },
-    conditionsView: {
-        //     flex:1,
-        //    backgroundColor:"gold",
-        //    flexDirection:"row",
-        //    justifyContent:"center",
-        //    alignItems:"flex-end",
-
-
-    }
+   timer:{
+       color:"gray",
+     
+       width:"100%",
+      textAlign:"right",
+      marginTop:10,
+      padding:10
+   },
+   defaultTimer:{
+   marginTop:10,
+   padding:10
+   },
+   DisableSignupBtnView: {
+    backgroundColor: "lightgray",
+    width: "100%",
+    borderRadius: 80,
+    marginTop: 10,
+    alignItems: "center",
+    color: "white"
+},
 
 })
 
