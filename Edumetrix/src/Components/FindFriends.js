@@ -84,7 +84,7 @@ class FindFriends extends Component {
 
                 {/* Footer  */}
                 <View style={{backgroundColor:"white"}}>
-                    <Footer />
+                <Footer props={this.props}/>
                 </View>
 
             </SafeAreaView>

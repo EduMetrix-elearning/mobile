@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 import { View, Text, SafeAreaView, Image, ScrollView, TouchableOpacity } from 'react-native'
 import style from '../Stylesheets/ProfilePageStyle'
-// import Icon from 'react-native-vector-icons/FontAwesome'
-// import MaterialIcon from 'react-native-vector-icons/Ionicons'
 import Drawer from './Drawer'
 import UserProfileBio from './UserProfileBio'
 import ProfilePost from './ProfilePost'
 import Footer from './Footer'
 
-class EditProfilePage extends Component {
+class Profile extends Component {
 
     constructor(props) {
         super(props)
 
         this.state = {
             isProfilePage: false,
-            isSubmenu: false
+            isSubmenu: false,
+            
         }
     }
 
     componentDidMount() {
-
+        console.log("inside profile");
+        
     }
 
     downloadHandle = () => {
@@ -31,8 +31,6 @@ class EditProfilePage extends Component {
         this.setState({
             isSubmenu: !this.state.isSubmenu
         })
-
-        console.log("submenu", this.state.isSubmenu);
 
     }
 
@@ -100,7 +98,7 @@ class EditProfilePage extends Component {
                 {/* Bottom tabs */}
                 <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 ,backgroundColor:"white"}}>
 
-                    <Footer/>
+                    <Footer props={this.props}/>
                 </View>
             </SafeAreaView>
 
@@ -111,4 +109,4 @@ class EditProfilePage extends Component {
 
 }
 
-export default EditProfilePage
+export default Profile

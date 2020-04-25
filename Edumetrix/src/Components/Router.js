@@ -16,6 +16,7 @@ import Send from './Send'
 import SendConfirmationPage from './SendConfirmationPage'
 import RequestPayment from './RequestPayment'
 
+
 const mainNavigator = createStackNavigator({
     
     Login:{screen:Login,navigationOptions:{headerShown:false}},
@@ -32,7 +33,6 @@ const mainNavigator = createStackNavigator({
     Send:{screen:Send,navigationOptions:{headerShown:false}},
     SendConfirmationPage:{screen:SendConfirmationPage,navigationOptions:{headerShown:false}},
     RequestPayment:{screen:RequestPayment,navigationOptions:{headerShown:false}}
-    
 },
 {initialRouteName: 'SplashScreen'}
 );

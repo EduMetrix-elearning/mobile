@@ -5,14 +5,14 @@ const style = StyleSheet.create({
     homeSafeArea:{
         backgroundColor:"white",
         flex:1,
-        margin:1
+        margin:5
     },
     drawerImg:{
         height:25,
         width:25
     },
     createView:{
-        backgroundColor:"lightgray",
+        backgroundColor:"#F7F7F7",
         padding:10,
         display:"flex",
         flexDirection:"row",
@@ -50,19 +50,19 @@ const style = StyleSheet.create({
     },
     sendBtn:{
         backgroundColor:"white",
-        display:"flex",
+        // display:"flex",
         flexDirection:"row",
-        justifyContent:"flex-end",
-        // borderBottomWidth:1,
-        // borderBottomColor:"lightgray"
+        justifyContent:"space-between",
         
     },
     sendImg:{
-        height:60,
-        width:60,
+        height:50,
+        width:50,
+        
     },
     userPostContainer:{
-        backgroundColor:"white"
+        backgroundColor:"white",
+        margin:5
     },
     userPostProfile:{
         display :"flex",
@@ -116,10 +116,9 @@ const style = StyleSheet.create({
     },
     suggestionView:{
         backgroundColor:"white",
-        padding:10,
         display:"flex",
         flexDirection:"row",
-        justifyContent:"space-around"
+        // justifyContent:"space-around"
     },
     suggestion:{
    
@@ -128,6 +127,23 @@ const style = StyleSheet.create({
         borderRadius:100,
         borderColor:"#F54C56",
         marginLeft:10
+    },
+    composeView:{
+        flexDirection:"row",
+        justifyContent:"center"
+    },
+    mediaView:{
+        justifyContent:"center",
+        marginLeft:15,
+        flexDirection:"row"
+    },
+    thumbnailImg:{
+        height:30,
+        width:30
+    },
+    modelImg:{
+        height:300,
+        width:"100%"
     }
 
 })

@@ -28,7 +28,7 @@ const style = StyleSheet.create({
         justifyContent: "center"
     },
     HeaderChatbox: {
-        backgroundColor: "white",
+        backgroundColor: "#164e64",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -50,7 +50,8 @@ const style = StyleSheet.create({
     },
     profileName:{
         justifyContent:"center",
-        marginLeft:5
+        marginLeft:5,
+        color:"white"
     },
     callingIconView:{
         display: "flex",

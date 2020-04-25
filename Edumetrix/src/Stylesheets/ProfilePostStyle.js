@@ -57,7 +57,7 @@ const style = StyleSheet.create({
     },
     postImg:{
         height:300,
-        width:ITEM_WIDTH
+        width:"100%"
     },
     likeView:{
         display:"flex",

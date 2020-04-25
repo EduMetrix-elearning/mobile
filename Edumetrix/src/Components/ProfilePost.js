@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, Image, Dimensions, TextInput } from 'react-native'
+import { View, Text, Image, Dimensions, TextInput, TouchableOpacity } from 'react-native'
 import style from '../Stylesheets/ProfilePostStyle'
+import Modal from 'react-native-modal';
 
 class ProfilePost extends Component {
 
@@ -8,13 +9,52 @@ class ProfilePost extends Component {
         super(props)
 
         this.state = {
-
+            isMenuClicked: false
         }
     }
 
+
+    menuHandle = () => {
+
+        this.setState({
+            isMenuClicked: !this.state.isMenuClicked
+        })
+
+    }
+
+    showModel = () => {
+        return (
+            <View>
+                <Modal animationIn={"slideInLeft"}
+                    isVisible={this.state.isMenuClicked}
+                    onBackButtonPress={this.menuHandle}
+                    onBackdropPress={this.menuHandle}
+                >
+                    <View style={{ backgroundColor: "white" ,padding:10}}>
+                        <TouchableOpacity>
+                            <View style={{padding:10}}>
+                                <Text>Edit your Post</Text>
+                            </View>
+
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                        <View style={{padding:10}}>
+                                <Text>Delete your Post</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+
+                </Modal>
+            </View>
+        )
+    }
+
+
+
     render() {
         return (
-            <View style={{ marginTop: 10 }}>
+            <View style={{ marginTop: 10,marginRight:5,marginLeft:5}}>
                 {/* user profile in post.. */}
                 <View style={style.profilePostContainer}>
                     <View style={style.profileDetailContainer}>
@@ -28,12 +68,15 @@ class ProfilePost extends Component {
                             <Text style={style.postDate}>Wednesday,12:00 PM</Text>
                         </View>
                     </View>
-                    <View>
-                        <Image source={require('../Assets/menu.png')} style={style.menuImg} />
-                    </View>
+                    <TouchableOpacity onPress={this.menuHandle}>
+                        <View>
+                            <Image source={require('../Assets/menu.png')} style={style.menuImg} />
+                        </View>
+                    </TouchableOpacity>
                 </View>
-                <View>
+                <View >
                     <Image source={require('../Assets/bird.jpg')} style={style.postImg} />
+                    
                 </View>
 
                 <View style={style.likeView}>
@@ -46,25 +89,27 @@ class ProfilePost extends Component {
                             <View>
                                 <Image source={require('../Assets/kapil.jpg')} style={style.commentProfileImg} />
                             </View>
-                            <View style = {{width:"85%",marginLeft:5}}>
-                                <TextInput 
-                                placeholder="write something here..."
-                                multiline
-                                
+                            <View style={{ width: "85%", marginLeft: 5 }}>
+                                <TextInput
+                                    placeholder="write something here..."
+                                    multiline
+
                                 />
                             </View>
 
                         </View>
-                        <View style ={style.postBtnView}>
+                        <View style={style.postBtnView}>
+                            <TouchableOpacity>
                             <View style={style.postBtn}>
-                            <Text style={{color:"white",fontWeight:"bold"}}>post</Text>
+                                <Text style={{ color: "white", fontWeight: "bold" }}>post</Text>
                             </View>
-                           
+                            </TouchableOpacity>
                         </View>
 
                     </View>
 
                 </View>
+                {(this.state.isMenuClicked) ? this.showModel() : null}
             </View>
         )
     }

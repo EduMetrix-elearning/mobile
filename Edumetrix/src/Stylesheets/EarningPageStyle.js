@@ -223,7 +223,7 @@ const style = StyleSheet.create({
         borderWidth:1
     },
     withdrawTitle:{
-        width:"100%",
+        width:"10%",
         padding:5,
         backgroundColor:"#1498DB",
         alignItems:"center",

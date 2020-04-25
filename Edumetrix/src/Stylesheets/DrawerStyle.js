@@ -82,14 +82,20 @@ const style = StyleSheet.create({
         borderWidth:1,
         padding:6,
         borderRadius:20,
-        borderColor:"white"
+        borderColor:"white",
+        marginLeft:10
+    },
+    myHome:{
+        borderWidth:1,
+        padding:6,
+        borderRadius:20,
+        borderColor:"white",
     },
     footerLinksView:{
-        // backgroundColor:"yellow",
         width:"90%",
         display:"flex",
         flexDirection:"row",
-        justifyContent:"space-around",
+       justifyContent:"center",
         marginBottom:5
     },
     dotView:{
@@ -97,7 +103,8 @@ const style = StyleSheet.create({
         borderRadius:100,
         height:4,
         width:4,
-        marginTop:10 
+        marginTop:8,
+        marginLeft:10 
     },
     versionView:{
         marginBottom:5
@@ -105,6 +112,10 @@ const style = StyleSheet.create({
     chatbotImg:{
         height:24,
         width:24
+    },
+    LogoutView:{
+        flexDirection:"row",
+        marginLeft:17,
     }
 
 })

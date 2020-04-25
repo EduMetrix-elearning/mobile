@@ -44,9 +44,11 @@ class FriendsCard extends Component {
                                 </View>
 
                         </View>
-                        <View style={{justifyContent:"center"}}>
+                        <TouchableOpacity style={{justifyContent:"center"}}>
+                        <View>
                         <Icon name="ios-person-add" size={24} color={"black"} />
                         </View>
+                        </TouchableOpacity>
                     </View>
                 </Card>
             </View>

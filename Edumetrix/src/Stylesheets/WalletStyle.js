@@ -4,7 +4,9 @@ const style = StyleSheet.create({
 
     headerContainer:{
         backgroundColor:"#164e64",
-        padding:10
+        padding:10,
+        marginLeft:5,
+        marginRight:5
     },
     companyTitleView:{
         alignItems:"center"

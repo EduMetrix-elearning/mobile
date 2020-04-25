@@ -118,11 +118,11 @@ class EarningPage extends Component {
                                     <Text style={{ color: "#1498DB", fontWeight: "bold" }}>Value: 5 INR</Text>
                                 </View>
 
-                                <View style={style.withdrawBtnView}>
+                                {/* <View style={style.withdrawBtnView}>
                                     <TouchableOpacity>
                                         <Text style={{ color: "white", fontWeight: "bold", fontSize: 12, letterSpacing: 1 }}>withdraw</Text>
                                     </TouchableOpacity>
-                                </View>
+                                </View> */}
 
                             </View>
                         </View>
@@ -216,35 +216,37 @@ class EarningPage extends Component {
                             </View>
                         </View>
 
-                        <View style={{ backgroundColor: "white", padding: 5, marginTop: 10 }}>
+                        {/* <View style={{ backgroundColor: "white", padding: 5, marginTop: 10 }}>
                             <Text style={style.referral}>Withdraw</Text>
-                        </View>
-                        <View style={style.withdrawView}>
+                        </View> */}
+                        {/* <View style={style.withdrawView}>
                             <View style={style.withdrawTableView}>
                                 <View style={style.withdrawTitle}>
                                     <Text style={{ fontWeight: "bold", fontSize: 15, color: "white" }}>wallet</Text>
                                 </View>
                                 <View style={style.paymentView}>
                                     <View style={style.paymentsubView}>
-                                        {/* <View style={style.bankTitle}><Text style={{ fontWeight: "bold", fontSize: 13 }}>Bank Account</Text></View> */}
-                                        {/* <View style={{ backgroundColor: "white", width: "70%" }}>
+                                        <View style={style.bankTitle}><Text style={{ fontWeight: "bold", fontSize: 13 }}>Bank Account</Text></View>
+                                        <View style={{ backgroundColor: "white", width: "70%" }}>
                                             <TextInput
                                                 placeholder="enter UPI ID "
                                                 multiline
                                             />
-                                        </View> */}
+                                        </View>
                                     </View>
 
-                                    {/* <View><Text>Bank Account</Text></View> */}
+                                    <View><Text>Bank Account</Text></View>
                                 </View>
 
                             </View>
-                        </View>
+                        </View> */}
+                      
+                      
                         {/* withdrawl  status */}
-                        <View style={{ backgroundColor: "white", padding: 5, marginTop: 10 }}>
+                        {/* <View style={{ backgroundColor: "white", padding: 5, marginTop: 10 }}>
                             <Text style={style.referral}>Withdraw status</Text>
-                        </View>
-                        <View style={style.withdrawStatusView}>
+                        </View> */}
+                        {/* <View style={style.withdrawStatusView}>
                             <View style={style.statusHeaderView}>
                                 <View style={style.date}>
                                     <Text style={{ marginRight: 10, padding: 5 }}>Date</Text>
@@ -284,7 +286,7 @@ class EarningPage extends Component {
                                     </View>
                                 </View>
                             </View>
-                        </View>
+                        </View> */}
 
                         <View style={style.earninigDetailsView}>
                             <View style={style.earningTitleView}>
@@ -432,7 +434,7 @@ class EarningPage extends Component {
 
                 {/* footer area */}
                 <View style={{ backgroundColor: "white" }}>
-                    <Footer />
+                <Footer props={this.props}/>
                 </View>
             </SafeAreaView>
         )

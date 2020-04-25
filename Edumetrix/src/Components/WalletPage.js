@@ -19,7 +19,7 @@ class WalletPage extends Component {
     }
 
     requestHandle = () => {
-        console.log("request handle..",this.props.navigation.navigate); 
+       
         this.props.navigation.navigate("RequestPayment") 
     }
 
@@ -83,7 +83,7 @@ class WalletPage extends Component {
 
                         </View>
                     </View>
-                    <ScrollView style={{marginTop:1}} showsVerticalScrollIndicator={false}>
+                    <ScrollView style={{margin:5}} showsVerticalScrollIndicator={false}>
                        <Transactions/>
                        <Transactions/>
                        <Transactions/>
@@ -98,7 +98,7 @@ class WalletPage extends Component {
                 {/* footer area */}
                 <View style={{ backgroundColor: "white" }}>
                     <View>
-                        <Footer />
+                    <Footer props={this.props}/>
                     </View>
                 </View>
 

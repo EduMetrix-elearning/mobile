@@ -36,6 +36,10 @@ target 'EduMetrix' do
 
   pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
   target 'EduMetrixTests' do
     inherit! :search_paths
     # Pods for testing

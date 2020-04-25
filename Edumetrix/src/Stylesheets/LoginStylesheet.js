@@ -28,7 +28,7 @@ const style = StyleSheet.create({
         justifyContent: "center",
         alignItems: "flex-end",
         padding: 10,
-       
+
 
     },
 
@@ -71,7 +71,9 @@ const style = StyleSheet.create({
         marginTop: 20,
         display: "flex",
         flexDirection: "row",
-        padding: 5
+        padding: 5,
+
+        width: "83%"
 
     },
 
@@ -85,17 +87,18 @@ const style = StyleSheet.create({
     },
     email: {
         // backgroundColor:"gray",
-        width: "88%"
+        width: "83%"
     },
     btnContainer: {
         width: "100%",
-        padding: 10
+        padding: 10,
+        alignItems: "center"
     },
     signInBtnView: {
 
         backgroundColor: "#237F89",
         backgroundColor: "#3D94BE",
-        width: "100%",
+        width: "83%",
         borderRadius: 80,
         marginTop: 10,
         // height:30,
@@ -110,9 +113,9 @@ const style = StyleSheet.create({
     },
     signupBtnView: {
         backgroundColor: "#617177",
-        width: "100%",
+        width: "83%",
         borderRadius: 80,
-        marginTop: 10,
+        marginTop: 15,
         alignItems: "center",
         color: "white"
     },
@@ -133,27 +136,39 @@ const style = StyleSheet.create({
     forgotpswrd: {
         color: "gray"
     },
-   timer:{
-       color:"gray",
-     
-       width:"100%",
-      textAlign:"right",
-      marginTop:10,
-      padding:10
-   },
-   defaultTimer:{
-   marginTop:10,
-   padding:10
-   },
-   DisableSignupBtnView: {
-    backgroundColor: "lightgray",
-    width: "100%",
-    borderRadius: 80,
-    marginTop: 10,
-    alignItems: "center",
-    color: "white"
-},
+    timer: {
+        color: "gray",
 
+        width: "100%",
+        textAlign: "right",
+        marginTop: 10,
+        padding: 10
+    },
+    defaultTimer: {
+        marginTop: 10,
+        padding: 10
+    },
+    DisableSignupBtnView: {
+        backgroundColor: "lightgray",
+        width: "83%",
+        borderRadius: 80,
+        marginTop: 10,
+        alignItems: "center",
+        color: "white"
+    },
+    conditionsView: {
+        
+        flexDirection: "row",
+        justifyContent:"center"
+    },
+    dotView: {
+        backgroundColor: "gray",
+        borderRadius: 100,
+        height: 4,
+        width: 4,
+        marginTop: 10,
+        marginLeft:5
+    }
 })
 
 export default style

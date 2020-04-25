@@ -24,7 +24,9 @@ class Drawer extends Component {
 
     notificationHandle = () =>{
        
-        this.props.props.navigation.navigate("NotificationPage")
+        // console.log("from drawer",this.props.props);
+        
+        this.props.props.navigation.navigate("NotificationPage",{props:this.props.props})
         
     }
 

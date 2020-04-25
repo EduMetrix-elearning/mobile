@@ -42,7 +42,7 @@ class ChatScreen extends Component {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
 
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 1,marginLeft:5,marginRight:5 }}>
                     {/* drawer header */}
 
                     <View>
@@ -94,7 +94,7 @@ class ChatScreen extends Component {
                 </View>
 
                 <View style={style.footerView}>
-                    <Footer />
+                <Footer props={this.props}/>
                 </View>
             </SafeAreaView>
         )

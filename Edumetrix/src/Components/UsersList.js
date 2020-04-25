@@ -19,7 +19,6 @@ class UsersList extends Component {
         await this.setState({
             userDetail:this.props.item
         })
-        console.log("users details",this.state.userDetail);
 
         this.props.props.navigation.navigate('Chatbox',{data:this.state.userDetail})
     }
@@ -28,7 +27,7 @@ class UsersList extends Component {
       
         const item = this.props.item
         return (
-            <View>
+            <View style={{marginRight:5,marginLeft:5}}>
                 <TouchableOpacity onPress={event=>this.userHandle(event)}>
                     <View style={style.userView}>
                         <View style={{ display: "flex", flexDirection: "row" }}>

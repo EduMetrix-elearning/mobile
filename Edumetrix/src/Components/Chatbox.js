@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, SafeAreaView, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native'
+import { View, Text, SafeAreaView, Image, TouchableOpacity, ScrollView, TextInput, StatusBar } from 'react-native'
 import { Header, Title, Button } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
@@ -23,24 +23,24 @@ class Chatbox extends Component {
         const { navigation } = this.props
         var data = navigation.getParam('data')
 
-        console.log("data in chatbox", this.props);
-
+        
         return (
             <SafeAreaView style={{ flex: 1 }}>
+
                 <View style={{ flex: 1 }}>
                     <View>
                         <Header style={style.HeaderChatbox}>
                             <View style={style.profileHeaderView}>
                                 <View>
                                     <Button transparent onPress={this.HandleBack}>
-                                        <Icon size={24} color={'black'} name={'md-arrow-round-back'} />
+                                        <Icon size={24} color={'white'} name={'md-arrow-round-back'} />
                                     </Button>
                                 </View>
                                 <View>
                                     <Image source={require('../Assets/kapil.jpg')} style={style.chatboxProfileImg} />
                                 </View>
                                 <View style={style.profileName}>
-                                    <Text>{data.name}</Text>
+                                    <Text style={{ color: "white" }}>{data.name}</Text>
                                 </View>
                             </View>
 
@@ -48,13 +48,13 @@ class Chatbox extends Component {
 
                                 <View style={{ justifyContent: "center", marginRight: 25 }}>
                                     <TouchableOpacity>
-                                        <Icon size={24} color={'black'} name={'ios-videocam'} />
+                                        <Icon size={24} color={'white'} name={'ios-videocam'} />
                                     </TouchableOpacity>
                                 </View>
 
                                 <View style={{ justifyContent: "center" }}>
                                     <TouchableOpacity>
-                                        <Icon size={24} color={'black'} name={'ios-call'} />
+                                        <Icon size={24} color={'white'} name={'ios-call'} />
                                     </TouchableOpacity>
                                 </View>
 
@@ -66,7 +66,7 @@ class Chatbox extends Component {
                         </Header>
                     </View>
 
-                    <View style ={{backgroundColor:"white",flex:1,marginTop:2}}>
+                    <View style={{ backgroundColor: "white", flex: 1, padding: 5 }}>
                         <ScrollView>
                             <Text>messages display area</Text>
                         </ScrollView>
@@ -78,9 +78,11 @@ class Chatbox extends Component {
                 <View style={style.typeMessageView}>
 
                     <View style={style.messageView}>
-                        <View style={{ justifyContent: "center",marginLeft:8 }}>
-                        <FontAwesome5 size={24} color={'gray'} name={'smile'} />
-                            </View>
+                        <TouchableOpacity style={{ justifyContent: "center", marginLeft: 8 }}>
+                        <View >
+                            <FontAwesome5 size={24} color={'gray'} name={'smile'} />
+                        </View>
+                        </TouchableOpacity>
 
                         <View style={style.inputText}>
                             <TextInput
@@ -88,10 +90,11 @@ class Chatbox extends Component {
                                 multiline
                             />
                         </View>
-                        <View style={{ justifyContent: "center", marginLeft: 2 }}>
+                        <TouchableOpacity  style={{ justifyContent: "center", marginLeft: 2 }}>
+                        <View>
                             <Entypo size={23} color={'gray'} name={'attachment'} />
-
                         </View>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={{ justifyContent: "center", padding: 5 }}>

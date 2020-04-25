@@ -12,7 +12,7 @@ class OtpPage extends Component {
         super(props)
 
         this.state = {
-            timer: 30,
+            timer: 3,
             getPage: this.props.navigation.getParam('page')
         }
     }
@@ -38,7 +38,7 @@ class OtpPage extends Component {
         clearInterval(this.interval);
     }
 
-    submit =  () => {
+    submit = () => {
 
         if (this.state.getPage === "wallet") {
 
@@ -66,7 +66,7 @@ class OtpPage extends Component {
                                 <Text style={style.title}>EDUMETRIX</Text>
                             </View>
 
-                            <View style={{ marginTop: 20 }}>
+                            <View style={{ marginTop: 20,alignItems:"center" }}>
 
                                 <View style={style.emailInput}>
 

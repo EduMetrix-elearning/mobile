@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, FlatList,Dimensions } from 'react-native'
+import { View, Text, ScrollView, FlatList, Dimensions } from 'react-native'
 import { SearchBar } from 'react-native-elements';
 import TabButton from './TabButton'
 import style from '../Stylesheets/SearchPageStyle'
+import Footer from './Footer'
 import Drawer from './Drawer'
 import SearchPics from './SearchPics'
+import { SafeAreaView } from 'react-navigation';
 const tabNames = ["Animals", "Nature", "Food", "Auto", "TV & Movies", "Games", "Bikes"]
 const images = [
     require('../Assets/kapil.jpg'),
@@ -28,7 +30,7 @@ class SearchPage extends Component {
 
         this.state = {
             search: '',
-            columns:2
+            columns: 2
         }
     }
 
@@ -42,52 +44,63 @@ class SearchPage extends Component {
 
     render() {
         const { search } = this.state;
-        const {columns} = this.state
+        const { columns } = this.state
 
         return (
 
-            // <KeyboardAvoidingView behavior="position">
-            <View>
-                  <Drawer getData={this.getData} props ={this.props}/>
-                <SearchBar
-                    placeholder="Search here...."
-                    onChangeText={this.updateSearch}
-                    cancelIcon
-                    value={search}
-                    inputStyle={
-                        {
-                            color: "white",
-                            fontSize: 15
-                        }
-                    }
-                />
-                <View style={style.tabsViewContainer}>
-                    <ScrollView horizontal={true}>
+            <SafeAreaView style={{ flex: 1 }}>
+                <View style={{ flex: 1,marginLeft:5,marginRight:5 }}>
+                    <View>
+                        <Drawer getData={this.getData} props={this.props} />
+                    </View>
+                    <View>
+                        <SearchBar
+                            placeholder="Search here...."
+                            onChangeText={this.updateSearch}
+                            cancelIcon
+                            value={search}
+                            inputStyle={
+                                {
+                                    color: "white",
+                                    fontSize: 15
+                                }
+                            }
+                        />
+                    </View>
 
-                        {
-
-                            tabNames.map((item, key) => (
-                                <TabButton name={item} />
-                            ))
-                        }
-
-                    </ScrollView>
+                    <View>
+                        <View style={style.tabsViewContainer}>
+                            <ScrollView horizontal={true}>
+                                {
+                                    tabNames.map((item, key) => (
+                                        <TabButton name={item} />
+                                    ))
+                                }
+                            </ScrollView>
+                        </View>
+                    </View>
+                    <View>
+                        <ScrollView>
+                            <View style={style.searchPicContainer}>
+                                <FlatList
+                                    numColumns={this.state.columns}
+                                    data={images}
+                                    renderItem={({ item }) => {
+                                        return <SearchPics itemWidth={(ITEM_WIDTH - (3 * columns)) / columns} image={item} />
+                                    }}
+                                    keyExtractor={(index) => {
+                                        return index
+                                    }}
+                                />
+                            </View>
+                        </ScrollView>
+                    </View>
                 </View>
-                <View style = {style.searchPicContainer}>
-                  <FlatList
-                  numColumns={this.state.columns}
-                  data = {images}
-                  renderItem={({item})=>{
-                     return <SearchPics itemWidth={(ITEM_WIDTH-(3*columns))/columns} image = {item}/>
-                  }}
-                  keyExtractor ={(index)=>{
-                      return index
-                  }}
-                  />
+                <View style={{backgroundColor:"white"}}>
+                    <Footer props={this.props}/>
                 </View>
-               
-            </View>
-
+            </SafeAreaView>
+           
         )
     }
 }

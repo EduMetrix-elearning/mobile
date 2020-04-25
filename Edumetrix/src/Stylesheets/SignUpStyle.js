@@ -61,6 +61,19 @@ const style = StyleSheet.create({
         alignItems:"center",
         
     },
+    conditionsView: {
+        
+        flexDirection: "row",
+        justifyContent:"center"
+    },
+    dotView: {
+        backgroundColor: "gray",
+        borderRadius: 100,
+        height: 4,
+        width: 4,
+        marginTop: 10,
+        marginLeft:5
+    }
 
 })
 

@@ -24,7 +24,7 @@ class ForgotPassword extends Component {
         return (
 
             <View style={style.loginContainer}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{marginBottom:240}}>
 
                 <View style={style.imageView}>
@@ -35,7 +35,7 @@ class ForgotPassword extends Component {
                     <Text style={style.title}>EDUMETRIX</Text>
                 </View>
 
-                <View style={{ marginTop: 20 }}>
+                <View style={{ marginTop: 20,alignItems:"center" }}>
 
                     <View style={style.emailInput}>
 

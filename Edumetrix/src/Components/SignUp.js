@@ -106,8 +106,19 @@ class SignUp extends Component {
                             </View>
                         </View>
 
-                        <View >
-                            <Text>Terms</Text>
+                        <View style={style.conditionsView}>
+                            <TouchableOpacity style={{flexDirection:"row"}}>
+                                <Text>Desclaimer</Text>
+                                <View style={style.dotView}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{flexDirection:"row",marginLeft:5}}>
+                                <Text>Privacy policy</Text>
+                                <View style={style.dotView}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{flexDirection:"row",marginLeft:5}}>
+                                <Text>Terms of Services</Text>
+                              
+                            </TouchableOpacity>
                         </View>
 
                     </ScrollView>
