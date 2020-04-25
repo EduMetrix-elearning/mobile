@@ -93,7 +93,6 @@ class ProfilePost extends Component {
                                 <TextInput
                                     placeholder="write something here..."
                                     multiline
-
                                 />
                             </View>
 
