@@ -27,16 +27,27 @@ class Login extends Component {
     }
 
     signInHandle = (event) => {
-        this.props.navigation.navigate("DrawerComponent")  
+        this.props.navigation.navigate("DrawerComponent")
     }
 
+
+    desclaimerHandle = () => {
+        this.props.navigation.navigate("Desclaimer")
+    }
+    privacyHandle = () => {
+        this.props.navigation.navigate("Privacy")
+    }
+
+    termsHandle = () =>{
+        this.props.navigation.navigate("Terms")
+    }
 
     render() {
         return (
             <SafeAreaView style={{ flex: 1, margin: 1 }}>
                 <View style={style.loginContainer}>
                     <ScrollView showsVerticalScrollIndicator={false}>
-                        <View style={{ marginBottom: 100 }}>
+                        <View style={{ marginBottom: 70 }}>
 
                             <View style={style.imageView}>
                                 <Image source={require('../Assets/logoCoin.png')} style={style.loginCoin} />
@@ -106,25 +117,25 @@ class Login extends Component {
                             </View>
                         </View>
                         <View style={style.conditionsView}>
-                            <TouchableOpacity style={{flexDirection:"row"}}>
+                            <TouchableOpacity onPress={this.desclaimerHandle} style={{ flexDirection: "row" }}>
                                 <Text>Desclaimer</Text>
-                                <View style={style.dotView}/>
+                                <View style={style.dotView} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{flexDirection:"row",marginLeft:5}}>
+                            <TouchableOpacity onPress={this.privacyHandle} style={{ flexDirection: "row", marginLeft: 5 }}>
                                 <Text>Privacy policy</Text>
-                                <View style={style.dotView}/>
+                                <View style={style.dotView} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{flexDirection:"row",marginLeft:5}}>
+                            <TouchableOpacity onPress={this.termsHandle} style={{ flexDirection: "row", marginLeft: 5 }}>
                                 <Text>Terms of Services</Text>
-                              
+
                             </TouchableOpacity>
                         </View>
-                   
-                       
+
+
                     </ScrollView>
-                    
+
                 </View>
-                
+
             </SafeAreaView>
 
         )

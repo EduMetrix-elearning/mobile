@@ -50,8 +50,6 @@ class ProfilePost extends Component {
         )
     }
 
-
-
     render() {
         return (
             <View style={{ marginTop: 10,marginRight:5,marginLeft:5}}>

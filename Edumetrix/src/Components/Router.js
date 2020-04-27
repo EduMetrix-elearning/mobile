@@ -15,10 +15,14 @@ import NotificationPage from './NotificationPage'
 import Send from './Send'
 import SendConfirmationPage from './SendConfirmationPage'
 import RequestPayment from './RequestPayment'
-
+import Desclaimer from './Desclaimer'
+import Privacy from './Privacy'
+import Terms from './Terms'
 
 const mainNavigator = createStackNavigator({
-    
+    Desclaimer:{screen:Desclaimer,navigationOptions:{headerShown:false}},
+    Privacy:{screen:Privacy,navigationOptions:{headerShown:false}},
+    Terms:{screen:Terms,navigationOptions:{headerShown:false}},
     Login:{screen:Login,navigationOptions:{headerShown:false}},
     SplashScreen:{screen:SplashScreen,navigationOptions:{headerShown:false}},
     ForgotPassword:{screen:ForgotPassword,navigationOptions:{headerShown:false}},

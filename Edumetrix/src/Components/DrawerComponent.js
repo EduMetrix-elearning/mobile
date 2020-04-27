@@ -98,18 +98,18 @@ class CustomDrawerComponent extends Component {
                 <View style={{ alignContent: "center", alignItems: "center" }}>
 
                     <View style={style.footerLinksView}>
-                        <TouchableOpacity>
+                        <TouchableOpacity  onPress={() => props.navigation.navigate("Desclaimer")}>
                             <View><Text style={{ fontSize: 13, color: "gray" }}>Desclaimer</Text></View>
                         </TouchableOpacity>
 
                         <View style={style.dotView} />
-                        <TouchableOpacity style={{marginLeft:5}}>
+                        <TouchableOpacity onPress={() => props.navigation.navigate("Privacy")} style={{marginLeft:5}}>
                             <View><Text style={{ fontSize: 13, color: "gray" }}>Privacy Policy</Text></View>
                         </TouchableOpacity>
                        
 
                     </View>
-                    <TouchableOpacity style={{marginBottom:5}}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate("Terms")} style={{marginBottom:5}}>
                         <View><Text style={{ fontSize: 13, color: "gray" }}>Terms of Services</Text></View>
                     </TouchableOpacity>
                     <View style={style.versionView}><Text style={{ fontSize: 13, color: "gray" }}>Version 4.1.0</Text></View>

@@ -23,11 +23,13 @@ class Drawer extends Component {
     }
 
     notificationHandle = () =>{
-       
-        // console.log("from drawer",this.props.props);
         
         this.props.props.navigation.navigate("NotificationPage",{props:this.props.props})
         
+    }
+    chatHandle = () =>{
+        this.props.props.navigation.navigate("Chatbox",{data:""})
+
     }
 
     render() {
@@ -47,7 +49,7 @@ class Drawer extends Component {
                         <TouchableOpacity onPress={this.notificationHandle}>
                     <Image source = {require('../Assets/post-notification.png')} style={style.postNotification}/>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={this.chatHandle}>
                     <Image source = {require('../Assets/chat-notification.png')} style={style.postNotification}/>
                     </TouchableOpacity>
                         <View>

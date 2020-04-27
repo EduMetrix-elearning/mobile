@@ -76,10 +76,33 @@ const style = StyleSheet.create({
     },
     inputText:{
         backgroundColor:"white",
-        width:"77%",
+        width:"100%",
         justifyContent:"center",
         marginLeft:2,
         borderRadius:30
+    },
+    tilesView:{
+        backgroundColor:"white",
+        padding:10,
+        flexDirection:"row",
+        justifyContent:"space-around"
+    },
+    modelImg:{
+        height:300,
+        width:"100%"
+    },
+    modelInputView:{
+        backgroundColor:"white",
+        flexDirection:"row",
+        padding:10
+    },
+    inputView:{
+        borderWidth:1,
+        width:"90%",
+        backgroundColor:"lightgray",
+        padding:3,
+        borderRadius:30,
+        borderColor:"lightgray"
     }
 })
 

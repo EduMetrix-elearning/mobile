@@ -157,9 +157,9 @@ const style = StyleSheet.create({
         color: "white"
     },
     conditionsView: {
-        
+
         flexDirection: "row",
-        justifyContent:"center"
+        justifyContent: "center"
     },
     dotView: {
         backgroundColor: "gray",
@@ -167,7 +167,14 @@ const style = StyleSheet.create({
         height: 4,
         width: 4,
         marginTop: 10,
-        marginLeft:5
+        marginLeft: 5
+    },
+    aboutUsView: {
+        padding: 10,
+        alignItems: "flex-end"
+    },
+    aboutText:{
+        color:"#164e64"
     }
 })
 

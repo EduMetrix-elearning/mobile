@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import { View, Text, SafeAreaView, Image, TouchableOpacity, ScrollView, TextInput, StatusBar } from 'react-native'
+import {
+    View, Text, SafeAreaView,
+    Image, TouchableOpacity,
+    ScrollView, TextInput,
+} from 'react-native'
 import { Header, Title, Button } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
-import Entypo from 'react-native-vector-icons/Entypo'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import style from '../Stylesheets/ChatScreenStyle'
+import ImagePicker from 'react-native-image-picker';
+import Modal from 'react-native-modal';
 
 class Chatbox extends Component {
 
@@ -12,18 +19,77 @@ class Chatbox extends Component {
         super(props)
 
         this.state = {
-            show: true
+            show: true,
+            image: "",
+            isImage: false
         }
     }
     HandleBack = () => {
         this.props.navigation.goBack()
     }
+
+    onClickAddImage = () => {
+
+        ImagePicker.showImagePicker({ noData: true, mediaType: "photo" }, (Response) => {
+
+
+            if (Response.didCancel) {
+
+
+            } else if (Response.error) {
+
+            } else if (Response.customButton) {
+
+            } else {
+                const source = { uri: Response.uri }
+
+                this.setState({
+                    isImage: true,
+                    image: source
+                })
+            }
+
+        })
+    }
+
+    showModal = () => {
+        return (
+            <Modal isVisible={this.state.isImage}
+                animationIn={"slideInLeft"}
+                onBackdropPress={() => this.setState({ isImage: false })}
+            >
+                <View>
+                <View style={{ backgroundColor: "white", paddingTop: 20, paddingBottom: 20 }}>
+                    <Image source={this.state.image} style={style.modelImg} />
+                </View>
+
+                <View style={style.modelInputView}>
+                    <View style={style.inputView}>
+                        <TextInput
+                            placeholder={"say something about picture..."}
+                            multiline
+                        />
+                    </View>
+                    <TouchableOpacity style={{justifyContent:"center",marginLeft:10}}>
+                    <View style={{justifyContent:"center"}}>
+                        <MaterialCommunityIcons name={"send"} size={25} color={"gray"} />
+                    </View>
+                    </TouchableOpacity>
+                   
+                </View>
+                </View>
+
+
+            </Modal>
+        )
+    }
+
     render() {
 
         const { navigation } = this.props
         var data = navigation.getParam('data')
 
-        
+
         return (
             <SafeAreaView style={{ flex: 1 }}>
 
@@ -78,23 +144,19 @@ class Chatbox extends Component {
                 <View style={style.typeMessageView}>
 
                     <View style={style.messageView}>
-                        <TouchableOpacity style={{ justifyContent: "center", marginLeft: 8 }}>
-                        <View >
-                            <FontAwesome5 size={24} color={'gray'} name={'smile'} />
-                        </View>
-                        </TouchableOpacity>
+                        {/* <TouchableOpacity style={{ justifyContent: "center", marginLeft: 8 }}>
+                            <View >
+                                <FontAwesome5 size={24} color={'gray'} name={'smile'} />
+                            </View>
+                        </TouchableOpacity> */}
 
                         <View style={style.inputText}>
                             <TextInput
-                                placeholder={"Type Message here"}
+                                placeholder={"Type a Message here..."}
                                 multiline
                             />
                         </View>
-                        <TouchableOpacity  style={{ justifyContent: "center", marginLeft: 2 }}>
-                        <View>
-                            <Entypo size={23} color={'gray'} name={'attachment'} />
-                        </View>
-                        </TouchableOpacity>
+
                     </View>
 
                     <View style={{ justifyContent: "center", padding: 5 }}>
@@ -105,6 +167,26 @@ class Chatbox extends Component {
                         </TouchableOpacity>
                     </View>
                 </View>
+
+                <View style={style.tilesView}>
+
+                    <TouchableOpacity>
+                        <View>
+                            <FontAwesome5 size={24} color={'gray'} name={'smile'} />
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.onClickAddImage}>
+                        <View>
+                            <FontAwesome size={24} color={'gray'} name={'photo'} />
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity >
+                        <View>
+                            <FontAwesome size={24} color={'gray'} name={'file-text-o'} />
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                {(this.state.image !== "") ? this.showModal() : null}
 
             </SafeAreaView>
         )

@@ -12,7 +12,10 @@ class SendConfirmationPage extends Component {
         super(props)
 
         this.state = {
-            data: this.props.navigation.getParam('data')
+            data: this.props.navigation.getParam('data'),
+            isSwap: false,
+            amount: "",
+            emc: ""
         }
     }
 
@@ -20,13 +23,36 @@ class SendConfirmationPage extends Component {
         this.props.navigation.goBack()
     }
 
-    confrmHandle =()=>{
-        this.props.navigation.navigate("OtpPage",{page:"wallet"})
+    confrmHandle = () => {
+        this.props.navigation.navigate("OtpPage", { page: "wallet" })
     }
 
-   
+    inputEMCs = async(text) => {
+        
+        let temp = text*4.76
+        
+        await this.setState({
+            amount:temp
+        })
+
+    }
+
+    inputAmnt = (text) => {
+       
+       
+        this.setState({
+            amount:text
+        })
+    }
+
+    swapHandle = () => {
+        this.setState({
+            isSwap: !this.state.isSwap
+        })
+    }
+
     render() {
-      
+
         const { data } = this.state
 
         return (
@@ -71,32 +97,64 @@ class SendConfirmationPage extends Component {
                             </View>
 
                             <View style={style.userInputView}>
-                                <TouchableOpacity style={{ justifyContent: "center" }}>
+                                <TouchableOpacity onPress={this.swapHandle} style={{ justifyContent: "center" }}>
                                     <View>
-                                        <MaterialIcons name="swap-vert" size={24} color={"black"} />
+                                        <MaterialIcons name="swap-vert" size={29} color={"black"} />
                                     </View>
                                 </TouchableOpacity>
 
-                                <View style={style.inputAmountView}>
-                                    <View style={style.InrAmntEnter}>
-                                        <View style={{ width: "85%" }}>
-                                            <TextInput
-                                                placeholder="Enter Amount"
-                                            />
+                                {(this.state.isSwap) ?
+
+                                    <View style={style.inputAmountView}>
+                                        <View style={style.InrAmntEnter}>
+                                            <View style={{ width: "85%" }}>
+                                                <TextInput
+                                                    placeholder="Enter Amount"
+                                                    value={this.state.amount}
+                                                    onChangeText={this.inputAmnt}
+                                                />
+                                            </View>
+                                            <View style={style.currencySign}>
+                                                <Text>Rs</Text>
+                                            </View>
                                         </View>
-                                        <View style={style.currencySign}>
-                                            <Text>Rs</Text>
+                                        <View style={style.EmcView}>
+                                            <View>
+                                                <Text>EMC</Text>
+                                            </View>
+                                            <View>
+                                                <Text>5976</Text>
+                                            </View>
                                         </View>
                                     </View>
-                                    <View style={style.EmcView}>
-                                        <View>
-                                            <Text>EMC</Text>
+
+                                    :
+
+                                    <View style={style.inputAmountView}>
+                                        <View style={style.InrAmntEnter}>
+                                            <View style={{ width: "85%" }}>
+                                                <TextInput
+                                                    placeholder="Enter EMCs"
+                                                    onChangeText={this.inputEMCs}
+                                                />
+                                            </View>
+                                            {/* <View style={style.currencySign}>
+                                                <Text>Rs</Text>
+                                            </View> */}
                                         </View>
-                                        <View>
-                                            <Text>5976</Text>
+                                        <View style={style.EmcView}>
+                                            <View>
+                                                <Text>Amount</Text>
+                                            </View>
+                                            <View>
+                                                <Text>Rs.</Text>
+                                            </View>
+                                            <View>
+                                        <Text>{this.state.amount}</Text>
+                                            </View>
                                         </View>
                                     </View>
-                                </View>
+                                }
                             </View>
                         </View>
                     </View>
@@ -112,7 +170,7 @@ class SendConfirmationPage extends Component {
                     </View>
                     <View style={style.confrmBtnView}>
                         <TouchableOpacity onPress={this.confrmHandle}
-                        style={style.cnfrmTouch}>
+                            style={style.cnfrmTouch}>
                             <Text style={style.cnfrmtext}>Confirm</Text>
                         </TouchableOpacity>
                     </View>
